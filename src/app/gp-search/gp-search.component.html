@@ -1,0 +1,60 @@
+<div></div>
+<div class="row">
+  <div class="col-3">
+    <div class="wrap">
+      <div class="search">
+        <label>Name:</label> &nbsp;&nbsp;
+        <input type="text" class="searchTerm" placeholder="search" [(ngModel)]="ticket.name" name="name">
+        <button type="submit" class="searchButton" (click)="search(ticket)">
+          <i class="fa fa-search"></i>
+        </button> &nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="wrap">
+      <div class="search">
+        <label>Description:</label> &nbsp;&nbsp;
+        <input type="text" class="searchTerm" placeholder="search" [(ngModel)]=" ticket.description" name="description">
+        <button type="submit" class="searchButton" (click)="search(ticket)">
+          <i class="fa fa-search"></i>
+        </button> &nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="wrap">
+      <div class="search">
+        <label>Type:</label> &nbsp;&nbsp;
+        <input type="text" class="searchTerm" placeholder="search" [(ngModel)]=" ticket.type" name="type">
+        <button type="submit" class="searchButton" (click)="search(ticket)">
+          <i class="fa fa-search"></i>
+        </button> &nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class="col-3" style="margin-left: -20px;">
+    <div class="wrap">
+      <div class="search">
+        <label>Ticket Status:</label> &nbsp;&nbsp;
+        <input type="text" class="searchTerm" placeholder="search" [(ngModel)]=" ticket.ticketStatus"
+          name="ticketStatus">
+        <button type="submit" class="searchButton" (click)="search(ticket)">
+          <i class="fa fa-search"></i>
+        </button> &nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <button type="button" class="btn btn-light" (click)="search()">search</button> -->
+<button type="button" class="btn btn-light" (click)="searchMultipleFileds(ticket)">search</button>
+
+<br>
+
+<br />
+<div class="ag-gird">
+  <ag-grid-angular #agGrid style="width:75%; height:400px;" id="myGrid" class="ag-theme-balham" class="ag-theme-balham"
+    [rowData]="rowData" [columnDefs]="columnDefs" rowSelection="multiple"  (cellClicked)='onCellClicked($event)'
+    >
+  </ag-grid-angular>
+</div>
